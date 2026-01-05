@@ -1,0 +1,56 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle with Gradient -->
+    <circle cx="60" cy="60" r="55" fill="url(#bgGradient)" opacity="0.15" />
+
+    <!-- Main Icon Circle -->
+    <circle cx="60" cy="60" r="50" stroke="url(#mainGradient)" stroke-width="4" />
+
+    <!-- Check Mark / Pen Symbol -->
+    <path d="M35 60L50 75L85 40"
+        stroke="url(#mainGradient)"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+
+    <!-- Inner Decorative Elements -->
+    <circle cx="60" cy="60" r="40" stroke="url(#innerGradient)" stroke-width="2" opacity="0.3" />
+
+    <!-- Accent Dots -->
+    <circle cx="90" cy="30" r="4" fill="url(#accentGradient)">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="30" cy="90" r="4" fill="url(#accentGradient)">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Gradients Definitions -->
+    <defs>
+        <!-- Background Gradient -->
+        <linearGradient id="bgGradient" x1="5" y1="5" x2="115" y2="115"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#2563eb" />
+            <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+
+        <!-- Main Gradient -->
+        <linearGradient id="mainGradient" x1="0" y1="0" x2="120" y2="120"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#2563eb" />
+            <stop offset="50%" stop-color="#60a5fa" />
+            <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+
+        <!-- Inner Gradient -->
+        <linearGradient id="innerGradient" x1="20" y1="20" x2="100" y2="100"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#60a5fa" />
+            <stop offset="100%" stop-color="#a78bfa" />
+        </linearGradient>
+
+        <!-- Accent Gradient -->
+        <radialGradient id="accentGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#2563eb" />
+            <stop offset="100%" stop-color="#7c3aed" />
+        </radialGradient>
+    </defs>
+</svg>
