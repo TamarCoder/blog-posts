@@ -1,0 +1,44 @@
+@use "../../variable.scss" as *;
+
+.footer {
+  max-width: 2000px;
+  width: 100%;
+  min-height: 100px;
+  height: 100%;
+  gap: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $box-shadow-sm;
+  border: 1px solid black;
+}
+.footerBoxs {
+  display: flex;
+  gap: 10px;
+}
+ 
+.footerBox {
+  flex: 1;  
+  padding: 10px;
+  background-color: $bg-secondary;
+}
+
+.aboutTitle{
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+
+
+
+.footerCopyright {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}

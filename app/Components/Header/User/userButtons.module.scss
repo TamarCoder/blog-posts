@@ -5,3 +5,19 @@
     align-items: center;
     gap: 10px;
 }
+
+
+@media (max-width: 768px){
+    .userButtonsContainer{
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .loginButton{
+        width: 100%;
+    }
+    .signUpButton{
+        width: 100%;
+    }
+}

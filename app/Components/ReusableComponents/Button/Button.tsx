@@ -36,6 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                ref={ref}
                className={buttonClasses}
                disabled={disabled || isLoading}
+               onClick={onClick}
                {...props}>
                   {title || children}
                </button>
