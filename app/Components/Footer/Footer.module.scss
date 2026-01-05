@@ -12,7 +12,6 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: $box-shadow-sm;
-  border: 1px solid black;
 }
 .footerBoxs {
   display: flex;
@@ -281,7 +280,7 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  border-top: 2px solid transparent;
+  border: 2px solid transparent;
   border-image: linear-gradient(to right, transparent, $primary-color, transparent);
   border-image-slice: 1;
   position: relative;
