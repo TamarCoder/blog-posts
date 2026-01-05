@@ -4,10 +4,30 @@ $primary-dark: #1e40af;
 $primary-light: #60a5fa;
 $primary-lighter: #dbeafe;
 
+$primary-color-hover: #1e40af;
+$primary-color-active: #1d4ed8;
+
+$primary-dark-hover: #1c3aa9;
+$primary-dark-active: #172f8f;
+
+$primary-light-hover: #93c5fd;
+$primary-light-active: #bfdbfe;
+
+
 // Secondary Colors
 $secondary-color: #7c3aed;
 $secondary-dark: #5b21b6;
 $secondary-light: #a78bfa;
+
+$secondary-color-hover: #6d28d9;
+$secondary-color-active: #5b21b6;
+
+$secondary-dark-hover: #4c1d95;
+$secondary-dark-active: #3b1464;
+
+$secondary-light-hover: #c4b5fd;
+$secondary-light-active: #e0d7fe;
+
 
 // Neutral Colors (Gray Scale)
 $black: #0f172a;
@@ -60,18 +80,17 @@ $shadow-md: rgba(0, 0, 0, 0.1);
 $shadow-lg: rgba(0, 0, 0, 0.15);
 $shadow-xl: rgba(0, 0, 0, 0.2);
 
-
 // Font Sizes
-$font-size-xs: 12px;       
-$font-size-sm: 14px;    
-$font-size-base: 16px;        
-$font-size-md: 18px;    
-$font-size-lg: 20px;      
-$font-size-xl: 24px;       
-$font-size-2xl: 30px;     
-$font-size-3xl: 36px;    
-$font-size-4xl: 48px;       
-$font-size-5xl: 60px;     
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-2xl: 30px;
+$font-size-3xl: 36px;
+$font-size-4xl: 48px;
+$font-size-5xl: 60px;
 // Line Heights
 $line-height-tight: 1.25;
 $line-height-snug: 1.375;
@@ -95,19 +114,18 @@ $letter-spacing-wide: 0.025em;
 $letter-spacing-wider: 0.05em;
 $letter-spacing-widest: 0.1em;
 
-
 // ============ SPACING ============
 
 // Base Spacing Scale (8px base)
 $spacing-0: 0;
-$spacing-1: 4px;   
-$spacing-2: 8px;    
-$spacing-3: 12px;   
-$spacing-4: 16px;       
-$spacing-5: 20px;    
-$spacing-6: 24px;    
-$spacing-8: 32px;       
- 
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 12px;
+$spacing-4: 16px;
+$spacing-5: 20px;
+$spacing-6: 24px;
+$spacing-8: 32px;
+
 // Padding Presets
 $padding-xs: $spacing-2;
 $padding-sm: $spacing-4;
@@ -126,8 +144,6 @@ $gap-sm: $spacing-4;
 $gap-md: $spacing-6;
 $gap-lg: $spacing-8;
 
- 
-
 // Border Widths
 $border-width-thin: 1px;
 $border-width-medium: 2px;
@@ -135,14 +151,13 @@ $border-width-thick: 4px;
 
 // Border Radius
 $border-radius-none: 0;
-$border-radius-sm: 4px;   
-$border-radius-md: 6px;  
-$border-radius-lg: 8px;    
-$border-radius-xl: 12px;    
-$border-radius-2xl: 16px;     
-$border-radius-3xl: 24px;   
-$border-radius-full: 9999px;  
-
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+$border-radius-2xl: 16px;
+$border-radius-3xl: 24px;
+$border-radius-full: 9999px;
 
 // ============ SHADOWS ============
 
@@ -158,7 +173,6 @@ $box-shadow-none: none;
 $text-shadow-sm: 0 1px 2px $shadow-md;
 $text-shadow-md: 0 2px 4px $shadow-lg;
 $text-shadow-lg: 0 4px 8px $shadow-xl;
-
 
 // ============ TRANSITIONS ============
 
@@ -181,7 +195,6 @@ $transition-bg: background-color $transition-base $ease-in-out;
 $transition-transform: transform $transition-base $ease-in-out;
 $transition-opacity: opacity $transition-base $ease-in-out;
 
-
 // ============ Z-INDEX ============
 
 $z-index-dropdown: 1000;
@@ -191,6 +204,3 @@ $z-index-modal-backdrop: 1040;
 $z-index-modal: 1050;
 $z-index-popover: 1060;
 $z-index-tooltip: 1070;
-
- 
-  

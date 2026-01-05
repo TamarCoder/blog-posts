@@ -1,0 +1,7 @@
+@use '../../../variable.scss' as *;
+
+.userButtonsContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

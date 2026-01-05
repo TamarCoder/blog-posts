@@ -1,0 +1,15 @@
+@use "../../../variable" as *;
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigationList{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+}
