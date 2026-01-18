@@ -1,58 +1,57 @@
-@use '../../variable' as *;
+@use "../../variable" as *;
 
-
-.header{
-    max-width: 2000px;
-    width: 100%;
-    min-height: 50px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    box-shadow: $box-shadow-sm;
+.header {
+  max-width: 2000px;
+  width: 100%;
+  min-height: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  box-shadow: $box-shadow-sm;
 }
-.headerContent{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.headerContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.headerRight{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .burgerMenu {
-    display: none;
+  display: none;
 }
 
-@media (max-width: 768px) {
-    .burgerMenu {
-        display: flex;
-    }
-    
-    .headerRight {
-        position: fixed;
-        right: 0;
-        top: 80px;
-        background-color: $primary-lighter;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        padding: 20px;
-        box-shadow: $box-shadow-lg;
-        transition: transform 0.3s ease-in-out;
-        z-index: 1000;
-    }
-    
-    .menuClosed {
-        transform: translateX(100%);
-    }
-    
-    /* ღია მენიუ - ჩანს */
-    .menuOpen {
-        transform: translateX(0);
-    }
+@include md {
+  .burgerMenu {
+    display: flex;
+  }
+
+  .headerRight {
+    position: fixed;
+    right: 0;
+    top: 80px;
+    background-color: $primary-lighter;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-shadow: $box-shadow-lg;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .menuClosed {
+    transform: translateX(100%);
+  }
+
+  /* ღია მენიუ - ჩანს */
+  .menuOpen {
+    transform: translateX(0);
+  }
 }

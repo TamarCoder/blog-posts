@@ -16,6 +16,11 @@
 .footerBoxs {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+
+  @include md {
+    flex-direction: column;
+  }
 }
 
 .footerBox {
@@ -30,22 +35,31 @@
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(to right, transparent, $primary-color, transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      $primary-color,
+      transparent
+    );
     transform: scaleX(0);
     transition: transform 0.4s ease;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, rgba($primary-color, 0.08), transparent 70%);
+    background: radial-gradient(
+      circle at top right,
+      rgba($primary-color, 0.08),
+      transparent 70%
+    );
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -55,7 +69,7 @@
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba($primary-color, 0.2);
-    box-shadow: 
+    box-shadow:
       0 10px 30px rgba(0, 0, 0, 0.1),
       0 0 20px rgba($primary-color, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -84,14 +98,14 @@
   height: 30px;
   font-size: 14px;
   position: relative;
-   padding-left: 30px;
+  padding-left: 30px;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   cursor: pointer;
   display: flex;
   align-items: center;
 
   &::before {
-    content: '→';
+    content: "→";
     position: absolute;
     left: 5px;
     font-size: 16px;
@@ -129,13 +143,17 @@
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 3px;
     height: 0;
-    background: linear-gradient(to bottom, $primary-color, darken($primary-color, 20%));
+    background: linear-gradient(
+      to bottom,
+      $primary-color,
+      darken($primary-color, 20%)
+    );
     transition: height 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border-radius: 0 2px 2px 0;
   }
@@ -155,13 +173,17 @@
     display: inline-block;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -2px;
       left: 15px;
       width: 0;
       height: 2px;
-      background: linear-gradient(to right, $primary-color, darken($primary-color, 15%));
+      background: linear-gradient(
+        to right,
+        $primary-color,
+        darken($primary-color, 15%)
+      );
       transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
@@ -202,17 +224,21 @@
   position: relative;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   cursor: pointer;
-  box-shadow: 
+  box-shadow:
     6px 6px 12px rgba(0, 0, 0, 0.15),
     -6px -6px 12px rgba(255, 255, 255, 0.7),
     inset 0 0 0 rgba(255, 255, 255, 0);
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: linear-gradient(145deg, $primary-color, darken($primary-color, 15%));
+    background: linear-gradient(
+      145deg,
+      $primary-color,
+      darken($primary-color, 15%)
+    );
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
@@ -220,7 +246,7 @@
 
   &:hover {
     transform: translateY(-8px) scale(1.1) rotate(5deg);
-    box-shadow: 
+    box-shadow:
       8px 8px 20px rgba(0, 0, 0, 0.25),
       -8px -8px 20px rgba(255, 255, 255, 0.8),
       inset 2px 2px 8px rgba(255, 255, 255, 0.3),
@@ -235,7 +261,7 @@
 
   &:active {
     transform: translateY(-2px) scale(0.98);
-    box-shadow: 
+    box-shadow:
       3px 3px 8px rgba(0, 0, 0, 0.2),
       -3px -3px 8px rgba(255, 255, 255, 0.7);
   }
@@ -255,7 +281,8 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-8px) scale(1.1) rotate(5deg);
   }
   50% {
@@ -264,14 +291,14 @@
 }
 
 @keyframes arrowBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   50% {
     transform: translateX(5px);
   }
 }
- 
 
 .footerCopyright {
   width: 100%;
@@ -281,7 +308,12 @@
   justify-content: center;
   background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
   border: 2px solid transparent;
-  border-image: linear-gradient(to right, transparent, $primary-color, transparent);
+  border-image: linear-gradient(
+    to right,
+    transparent,
+    $primary-color,
+    transparent
+  );
   border-image-slice: 1;
   position: relative;
   overflow: hidden;
@@ -291,18 +323,23 @@
   padding: 15px 20px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, transparent, $primary-color, transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      $primary-color,
+      transparent
+    );
     animation: shimmer 3s infinite;
   }
 
   &::after {
-    content: '✨';
+    content: "✨";
     position: absolute;
     right: 20px;
     font-size: 18px;
@@ -317,7 +354,9 @@
     transition: all 0.4s ease;
 
     &::after {
-      animation: sparkle 0.5s ease-in-out infinite, float 2s ease-in-out infinite;
+      animation:
+        sparkle 0.5s ease-in-out infinite,
+        float 2s ease-in-out infinite;
     }
   }
 }
@@ -332,7 +371,8 @@
 }
 
 @keyframes sparkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
     transform: scale(1);
   }
@@ -343,7 +383,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) scale(1);
   }
   50% {

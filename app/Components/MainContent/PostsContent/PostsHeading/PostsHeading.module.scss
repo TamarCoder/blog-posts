@@ -1,0 +1,40 @@
+@use "../../../../variable.scss" as *;
+
+.postsHeading {
+  width: 100%;
+  padding: 5px 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); // Softer shadow
+  position: relative;
+
+  @include md {
+    margin-bottom: 10px;
+    padding: 10px; // Increased padding for container look
+  }
+}
+
+.title {
+  font-size: 22px;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  letter-spacing: 1px;
+  // text-shadow removed
+  display: flex;
+  align-items: center;
+  gap: 12px; // Space between accent and text
+  position: relative;
+
+  // Decorative vertical accent line
+  &::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 24px; // Matches text height roughly
+    background: linear-gradient(to bottom, $primary-color, $primary-dark);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba($primary-color, 0.3);
+  }
+}

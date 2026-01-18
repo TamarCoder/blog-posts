@@ -13,7 +13,6 @@ $primary-dark-active: #172f8f;
 $primary-light-hover: #93c5fd;
 $primary-light-active: #bfdbfe;
 
-
 // Secondary Colors
 $secondary-color: #7c3aed;
 $secondary-dark: #5b21b6;
@@ -27,7 +26,6 @@ $secondary-dark-active: #3b1464;
 
 $secondary-light-hover: #c4b5fd;
 $secondary-light-active: #e0d7fe;
-
 
 // Neutral Colors (Gray Scale)
 $black: #0f172a;
@@ -162,9 +160,15 @@ $border-radius-full: 9999px;
 // ============ SHADOWS ============
 
 $box-shadow-sm: 0 1px 2px 0 $shadow-sm;
-$box-shadow-md: 0 4px 6px -1px $shadow-md, 0 2px 4px -1px $shadow-sm;
-$box-shadow-lg: 0 10px 15px -3px $shadow-md, 0 4px 6px -2px $shadow-sm;
-$box-shadow-xl: 0 20px 25px -5px $shadow-lg, 0 10px 10px -5px $shadow-md;
+$box-shadow-md:
+  0 4px 6px -1px $shadow-md,
+  0 2px 4px -1px $shadow-sm;
+$box-shadow-lg:
+  0 10px 15px -3px $shadow-md,
+  0 4px 6px -2px $shadow-sm;
+$box-shadow-xl:
+  0 20px 25px -5px $shadow-lg,
+  0 10px 10px -5px $shadow-md;
 $box-shadow-2xl: 0 25px 50px -12px $shadow-xl;
 $box-shadow-inner: inset 0 2px 4px 0 $shadow-sm;
 $box-shadow-none: none;
@@ -204,3 +208,35 @@ $z-index-modal-backdrop: 1040;
 $z-index-modal: 1050;
 $z-index-popover: 1060;
 $z-index-tooltip: 1070;
+
+// ============ BREAKPOINTS ============
+
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+@mixin sm {
+  @media (max-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}

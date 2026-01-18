@@ -15,6 +15,8 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+
   return (
     <header className={styles.header}>
       <section className={styles.headerContent}>

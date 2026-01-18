@@ -1,50 +1,45 @@
+import Post from "./Post/Post";
 import styles from "./PostsContent.module.scss";
 import React from "react";
+import { PostsHeading } from "./PostsHeading/PostsHeading";
+import { MainRightSide } from "./MainRightSide/MainRightSide";
 
 export const PostsContent: React.FC = () => {
+  const posts = [
+    {
+      postImage: "/images/postCard-1.jpg",
+      categories: "Technologies",
+      postTitle: "Post Title",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, nobis. Expedita repellat laudantium hic officiis ullam ipsam, voluptate et nostrum.",
+      postData: {
+        data: "2022-01-01",
+        author: "Author",
+        comments: "Comments",
+      },
+    },
+  ];
+
   return (
     <div className={styles.postsContent}>
       <div className={styles.postTopSide}>
         <div className={styles.mainLeftSide}>
-          <div className={styles.heading}></div>
+          <PostsHeading title="Latest Posts" />
+
           <div className={styles.Posts}>
-            <div className={styles.post}></div>
-            <div className={styles.post}></div>
-            <div className={styles.post}></div>
-            <div className={styles.post}></div>
-            <div className={styles.post}></div>
-            <div className={styles.post}></div>
+            {posts.map((post, index) => (
+              <Post
+                key={index}
+                postImage={post.postImage}
+                categories={post.categories}
+                postTitle={post.postTitle}
+                description={post.description}
+                postData={post.postData}
+              />
+            ))}
           </div>
         </div>
-        <div className={styles.mainRightSide}>
-          <div className={styles.search}>
-            <div className={styles.heading}>Search </div>
-            <div className={styles.input}>input</div>
-            <button className={styles.button}>Search</button>
-          </div>
-          <div className={styles.categories}>
-            <div className={styles.heading}>Categories</div>
-            <div className={styles.category}>ტექნოლოგია</div>
-            <div className={styles.category}>ბიზნესი</div>
-            <div className={styles.category}>ლაიფსთაილი</div>
-            <div className={styles.category}>მოგზაურობა</div>
-            <div className={styles.category}>განათლება</div>
-          </div>
-          <div className={styles.lastPosts}>
-            <div className={styles.heading}>last Posts</div>
-            <div className={styles.postBox}>last Posts 1</div>
-            <div className={styles.postBox}>last Posts 2</div>
-            <div className={styles.postBox}>last Posts 3</div>
-            <div className={styles.postBox}>last Posts 4</div>
-          </div>
-          <div className={styles.tags}>
-            <div className={styles.heading}>Tags</div>
-            <div className={styles.postBox}>Tags 1</div>
-            <div className={styles.postBox}>Tags 2</div>
-            <div className={styles.postBox}>Tags 3</div>
-            <div className={styles.postBox}>Tags 4</div>
-          </div>
-        </div>
+        <MainRightSide />
       </div>
 
       <div className={styles.pagination}></div>
