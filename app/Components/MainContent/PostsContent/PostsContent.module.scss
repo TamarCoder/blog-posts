@@ -33,6 +33,19 @@
   }
 }
 
+.Posts {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include md {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
 .pagination {
   width: 100%;
   height: 40px;

@@ -1,0 +1,131 @@
+@use "../../../../../variable.scss" as *;
+
+.tags {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+// Reusing the modern Heading style
+.postsHeading {
+  width: 100%;
+  padding: 5px 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border-radius: 8px;
+  background-color: $white;
+
+  @include md {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(to bottom, $primary-color, $primary-dark);
+    border-radius: 4px;
+  }
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px; // Pill shape
+  font-size: 13px;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  // Colorful variants
+  &:nth-child(6n + 1) {
+    color: #3b82f6; // Blue
+    border-color: #3b82f6;
+    &:hover {
+      background-color: #3b82f6;
+      color: $white;
+      box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    }
+  }
+
+  &:nth-child(6n + 2) {
+    color: #10b981; // Green
+    border-color: #10b981;
+    &:hover {
+      background-color: #10b981;
+      color: $white;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    }
+  }
+
+  &:nth-child(6n + 3) {
+    color: #f59e0b; // Amber
+    border-color: #f59e0b;
+    &:hover {
+      background-color: #f59e0b;
+      color: $white;
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+    }
+  }
+
+  &:nth-child(6n + 4) {
+    color: #ef4444; // Red
+    border-color: #ef4444;
+    &:hover {
+      background-color: #ef4444;
+      color: $white;
+      box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+    }
+  }
+
+  &:nth-child(6n + 5) {
+    color: #8b5cf6; // Purple
+    border-color: #8b5cf6;
+    &:hover {
+      background-color: #8b5cf6;
+      color: $white;
+      box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+    }
+  }
+
+  &:nth-child(6n + 6) {
+    color: #ec4899; // Pink
+    border-color: #ec4899;
+    &:hover {
+      background-color: #ec4899;
+      color: $white;
+      box-shadow: 0 4px 10px rgba(236, 72, 153, 0.3);
+    }
+  }
+}

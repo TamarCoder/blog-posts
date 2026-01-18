@@ -10,36 +10,4 @@
   @include md {
     width: 100%;
   }
-  // Search styles removed (moved to Search component)
-
-  .categories {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .category {
-    width: 100%;
-    height: 30px;
-    border: 1px solid black;
-  }
-
-  .lastPosts {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .postBox {
-    width: 100%;
-    height: 30px;
-    border: 1px solid black;
-  }
-
-  .tags {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 }
