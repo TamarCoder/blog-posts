@@ -1,3 +1,4 @@
+import { filterStore } from "../../../../../store/categroyFilter";
 import styles from "./Categories.module.scss";
 
 type CategoryProps = {
@@ -5,13 +6,11 @@ type CategoryProps = {
 };
 
 export const Categories = ({ CategoryTitle }: CategoryProps) => {
-  const categories = [
-    { id: 1, name: "Category" },
-    { id: 2, name: "Business" },
-    { id: 3, name: "Lifestyle" },
-    { id: 4, name: "Travel" },
-    { id: 5, name: "Education" },
-  ];
+  const categories = filterStore((state) => state.categories);
+  const activeCategory = filterStore((state) => state.activeCategory);
+  const setActiveCategory = filterStore((state) => state.setActiveCategory);
+
+  
 
   return (
     <div className={styles.categories}>
@@ -19,10 +18,17 @@ export const Categories = ({ CategoryTitle }: CategoryProps) => {
         <h1 className={styles.title}>{CategoryTitle}</h1>
       </div>
       {categories.map((category) => (
-        <button key={category.id} className={styles.category}>
-          {category.name}
+        <button
+          key={category}
+          className={`${styles.category} ${
+            activeCategory === category ? styles.active : ""
+          }`}
+          onClick={() => setActiveCategory(category)}
+        >
+          {category}
         </button>
       ))}
     </div>
   );
 };
+ 

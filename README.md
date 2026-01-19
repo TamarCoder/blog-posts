@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Blog Posts App
 
-## Getting Started
+Next.js 16 + Turbopack demo for a blog-style feed with category filtering and client-side pagination.
 
-First, run the development server:
+### Quick start
+- Install deps: `npm install`
+- Dev server: `npm run dev`
+- Open: http://localhost:3000
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Core logic (მნიშვნელოვანი)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **კატეგორიების ფილტრაცია (Zustand store)**
+	- State ინახება [app/store/categroyFilter.ts](app/store/categroyFilter.ts).
+	- `activeCategory` აორჩევს მიმდინარე ფილტრს; `setActiveCategory` აახლებს.
+	- `filterPosts()` აბრუნებს ან ყველა პოსტს, ან მხოლოდ არჩეული კატეგორიის პოსტებს.
+	- UI ღილაკები მოდის [Categories](app/Components/MainContent/PostsContent/MainRightSide/Categories/Categories.tsx) კომპონენტიდან, რომელიც store-ს ატრიალებს.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **პაგინაცია + ფილტრაციის დაკავშირება**
+	- მთავარი ლოგიკა არის [PostsContent](app/Components/MainContent/PostsContent/PostsContent.tsx#L13-L40):
+		- `filteredByCategory` იზრდება `useMemo`-ით აქტიური კატეგორიის მიხედვით.
+		- `totalPages` გამოითვლება `filteredByCategory.length / POSTS_PER_PAGE`-ით, ამიტომ კატეგორიის შეცვლა გვერდების რაოდენობასაც ცვლის.
+		- `useEffect` (ხაზი ~19) კატეგორიის ყოველ ცვლილებაზე `currentPage`-ს აბრუნებს 1-ზე.
+		- `paginatedPosts` ჭრის მხოლოდ მიმდინარე გვერდის პოსტებს და ეგ რეალურად რენდერდება.
+		- `handlePageChange` აახლებს გვერდს და აკეთებს smooth scroll-ს ზევით.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Pagination UI კომპონენტი**
+	- მდებარეობს [app/Components/ReusableComponents/Pagination/Pagination.tsx](app/Components/ReusableComponents/Pagination/Pagination.tsx).
+	- Range generator + DOTS ლოგიკა უზრუნველყოფს "..." შუალედებს დიდი გვერდებისას.
+	- Props: `currentPage`, `totalPages`, `onPageChange`, `variant` (`default`/`rounded`), `size`, `siblingCount`, `showFirstLast`, `showPrevNext`, `disabled`.
+	- Internal guard აკავებს კლიკებს როცა `disabled` ან იგივე გვერდზე გადასვლას ცდილობ.
 
-## Learn More
+- **მონაცემები**
+	- პოსტები ინახება [PostDate.ts](app/Components/MainContent/PostsContent/PostDate.ts)-ში; ყოველი ობიექტი შეიცავს `categories`, `postImage`, `postTitle`, `description`, `postData` ველებს.
 
-To learn more about Next.js, take a look at the following resources:
+### სად ვეძებო რა
+- მთავარი გვერდის content layout: [app/Components/MainContent/MainContent.tsx](app/Components/MainContent/MainContent.tsx)
+- Hero/Sidebar/Posts ბლოკები: [app/Components/MainContent](app/Components/MainContent)
+- გლობალური სტილები: [app/globals.css](app/globals.css)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Dev რჩევა
+- თუ Turbopack-ის stale bundle პრობლემას წააწყდებით, გაწმინდეთ cache: `rm -rf .next` და თავიდან გაუშვით `npm run dev`.

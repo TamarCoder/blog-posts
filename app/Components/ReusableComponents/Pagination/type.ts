@@ -1,15 +1,15 @@
-export type PaginationVariant = "default" | "rounded" | "outline";
-export type PaginationSize = "sm" | "md" | "lg";
+export type PaginationVariant = 'default' | 'rounded' | 'outlined';
+export type PaginationSize = 'sm' | 'md' | 'lg';
 
-export interface PagintaionProps {
-  curentPage: number;
+export interface PaginationProps {
+  currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
-  varina?: PaginationVariant;
+  variant?: PaginationVariant;
   size?: PaginationSize;
-  showFristLast?: boolean;
+  showFirstLast?: boolean;
   showPrevNext?: boolean;
   siblingCount?: number;
-  disaable?: boolean;
-  clasName?: string;
+  disabled?: boolean;
+  className?: string;
 }

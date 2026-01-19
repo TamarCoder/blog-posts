@@ -40,6 +40,12 @@
   &:nth-child(5) {
     background: linear-gradient(45deg, #ef4444, #b84e50);
   }
+   &:nth-child(6) {
+    background: linear-gradient(45deg, #ef8044, #b84e50);
+  }
+   &:nth-child(7) {
+    background: linear-gradient(45deg, rgb(94, 239, 68), #b84e50);
+  }
 }
 
 .postsHeading {
