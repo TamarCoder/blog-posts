@@ -4,6 +4,7 @@ import React from "react";
 import { PostsHeading } from "./PostsHeading/PostsHeading";
 import { MainRightSide } from "./MainRightSide/MainRightSide";
 import { posts } from "./PostDate";
+import Pagination from "../../ReusableComponents/Pagination/Pagination";
 
 export const PostsContent: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ export const PostsContent: React.FC = () => {
         <MainRightSide />
       </div>
 
-      <div className={styles.pagination}></div>
+       <Pagination/>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import styles from "./MainRightSide.module.scss";
-import { SearchBar } from "./Search/Search";
+import { SearchBar } from "../../../ReusableComponents/Search/Search";
 import { Categories } from "./Categories/Categories";
 import { LastPosts } from "./LastPosts/LastPosts";
 import { Tags } from "./Tags/Tags";
